@@ -53,13 +53,13 @@ module.exports = function (app) {
         params = jsToTM(req.query)
         var maniacodeStr = ""
 
-        // for(const key in params){
-        //     maniacodeStr += "InputPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
-        // }
+        for(const key in params){
+            maniacodeStr += "InputPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
+        }
 
-        // maniascript = maniascript.replace("{{code}}", maniacodeStr)
+        maniascript = maniascript.replace("{{code}}", maniacodeStr)
 
-        console.log(maniascript)
+        // console.log(maniascript)
 
         res.set('Content-Type', 'text/xml')
         res.send(maniascript)
