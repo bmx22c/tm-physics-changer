@@ -207,7 +207,7 @@
 			if(document.querySelector("#physicNobrakeUpdate").checked) params.physicNobrake = document.querySelector("#physicNobrakeEnable").checked
 			if(document.querySelector("#physicSlowMoUpdate").checked) params.physicSlowMo = document.querySelector("#physicSlowMoEnable").checked
 
-			let baseURL = "https://localhost:3000/physics/?"
+			let baseURL = "https://tm-physics-changer.herokuapp.com/physics/?"
 			let paramsStr = new URLSearchParams(params).toString();
 			console.log(baseURL+paramsStr);
 			
