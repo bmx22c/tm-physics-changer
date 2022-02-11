@@ -8,7 +8,7 @@
         main() {
             declare metadata Int3[][Real] GravityTriggers for Playground.Map; 
             declare Int3 PlayerPosition;
-            {{code}}
+            InputPlayer.GravityCoef=0.1;
         }
     
 -->

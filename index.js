@@ -15,7 +15,7 @@ const privateKey = fs.readFileSync('cert/key.pem')
 const certificate = fs.readFileSync('cert/cert.pem')
 const credentials = {key: privateKey, cert: certificate}
 const app = express()
-const httpsServer = https.createServer(credentials, app)
+// const httpsServer = https.createServer(credentials, app)
 const port = ~~process.env.PORT || 3000
 
 app.use(cors());
@@ -24,6 +24,6 @@ require('./routes/home.js')(app)
 require('./routes/physics.js')(app)
 // require('./routes/checkprofile.js')(app)
 
-httpsServer.listen(port, () => {
+app.listen(port, () => {
 	console.log(`Application exemple à l'écoute sur le port ${port}!`);
 });
