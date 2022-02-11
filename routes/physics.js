@@ -18,7 +18,7 @@ const fs = require('fs')
 
 dict = {
     'physicReactorBoostUp': 'BoostUp',
-    'physicRedReactorBoostUp': 'Boost2Up',
+    'physicRedReactorBoostUp': 'ReactorBoost2',
     'physicNoSteer': 'NoSteer',
     'physicNoEngine': 'NoEngine',
     'physicFullThrottle': 'ForceEngine',
