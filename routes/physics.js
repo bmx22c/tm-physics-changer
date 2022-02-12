@@ -18,7 +18,7 @@ const fs = require('fs')
 
 dict = {
     'physicReactorBoostUp': 'BoostUp',
-    'physicRedReactorBoostUp': 'ReactorBoost2',
+    'physicRedReactorBoostUp': 'Boost2Up',
     'physicNoSteer': 'NoSteer',
     'physicNoEngine': 'NoEngine',
     'physicFullThrottle': 'ForceEngine',
@@ -27,6 +27,11 @@ dict = {
     'physicFragile': 'Fragile',
     'physicNobrake': 'NoBrakes',
     'physicSlowMo': 'SlowMotion',
+    'physicsCruise': 'Cruise',
+    'physicsAcceleration': 'AccelCoef',
+    'physicsAdherence': 'AdherenceCoef',
+    'physicsControl': 'ControlCoef',
+    'physicsGravity': 'GravityCoef',
 }
 
 function jsToTM(query){

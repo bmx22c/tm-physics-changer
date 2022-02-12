@@ -171,6 +171,40 @@
 				</div>
 			</div>
 		</div>
+		<div class="row mb-2">
+			<div class="col">
+				<div class="row">
+					<label for="physicsCruiseValue" class="form-label">Cruise (value: <span class="physicsCruiseValueText">0</span>)</label>
+					<input type="range" class="form-range" min="0" max="999" id="physicsCruiseValue" oninput="document.querySelector('.physicsCruiseValueText').innerHTML=this.value">
+					<input type="checkbox" class="btn-check" id="physicsCruiseUpdate" autocomplete="off">
+  					<label class="btn btn-outline-primary" for="physicsCruiseUpdate">Update</label>
+				</div>
+				<div class="row">
+					<label for="physicsAccelerationValue" class="form-label">Acceleration (value: <span class="physicsAccelerationValueText">1.0</span>)</label>
+					<input type="range" class="form-range" min="0" max="1" step="0.01" id="physicsAccelerationValue" oninput="document.querySelector('.physicsAccelerationValueText').innerHTML=this.value" value="1.0">
+					<input type="checkbox" class="btn-check" id="physicsAccelerationUpdate" autocomplete="off">
+  					<label class="btn btn-outline-primary" for="physicsAccelerationUpdate">Update</label>
+				</div>
+				<div class="row">
+					<label for="physicsAdherenceValue" class="form-label">Adherence (value: <span class="physicsAdherenceValueText">1.0</span>)</label>
+					<input type="range" class="form-range" min="0" max="1" step="0.01" id="physicsAdherenceValue" oninput="document.querySelector('.physicsAdherenceValueText').innerHTML=this.value" value="1.0">
+					<input type="checkbox" class="btn-check" id="physicsAdherenceUpdate" autocomplete="off">
+  					<label class="btn btn-outline-primary" for="physicsAdherenceUpdate">Update</label>
+				</div>
+				<div class="row">
+					<label for="physicsControlValue" class="form-label">Control (value: <span class="physicsControlValueText">1.0</span>)</label>
+					<input type="range" class="form-range" min="0" max="1" step="0.01" id="physicsControlValue" oninput="document.querySelector('.physicsControlValueText').innerHTML=this.value" value="1.0">
+					<input type="checkbox" class="btn-check" id="physicsControlUpdate" autocomplete="off">
+  					<label class="btn btn-outline-primary" for="physicsControlUpdate">Update</label>
+				</div>
+				<div class="row">
+					<label for="physicsGravityValue" class="form-label">Gravity (value: <span class="physicsGravityValueText">1.0</span>)</label>
+					<input type="range" class="form-range" min="0" max="1" step="0.01" id="physicsGravityValue" oninput="document.querySelector('.physicsGravityValueText').innerHTML=this.value" value="1.0">
+					<input type="checkbox" class="btn-check" id="physicsGravityUpdate" autocomplete="off">
+  					<label class="btn btn-outline-primary" for="physicsGravityUpdate">Update</label>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col">
 				<div class="input-group mb-3">
@@ -206,6 +240,12 @@
 			if(document.querySelector("#physicFragileUpdate").checked) params.physicFragile = document.querySelector("#physicFragileEnable").checked
 			if(document.querySelector("#physicNobrakeUpdate").checked) params.physicNobrake = document.querySelector("#physicNobrakeEnable").checked
 			if(document.querySelector("#physicSlowMoUpdate").checked) params.physicSlowMo = document.querySelector("#physicSlowMoEnable").checked
+
+			if(document.querySelector("#physicsCruiseUpdate").checked) params.physicsCruise = document.querySelector("#physicsCruiseValue").value
+			if(document.querySelector("#physicsAccelerationUpdate").checked) params.physicsAcceleration = document.querySelector("#physicsAccelerationValue").value
+			if(document.querySelector("#physicsAdherenceUpdate").checked) params.physicsAdherence = document.querySelector("#physicsAdherenceValue").value
+			if(document.querySelector("#physicsControlUpdate").checked) params.physicsControl = document.querySelector("#physicsControlValue").value
+			if(document.querySelector("#physicsGravityUpdate").checked) params.physicsGravity = document.querySelector("#physicsGravityValue").value
 
 			let baseURL = "https://tm-physics-changer.herokuapp.com/physics/?"
 			let paramsStr = new URLSearchParams(params).toString();
