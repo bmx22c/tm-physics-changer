@@ -34,6 +34,14 @@ dict = {
     'physicsGravity': 'GravityCoef',
 }
 
+realList = [
+    'Cruise',
+    'AccelCoef',
+    'AdherenceCoef',
+    'ControlCoef',
+    'GravityCoef',
+]
+
 function jsToTM(query){
     var params = {}
 
@@ -59,7 +67,12 @@ module.exports = function (app) {
         var maniacodeStr = ""
 
         for(const key in params){
-            maniacodeStr += "InputPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
+            var code = "";
+            if(realList.includes(key)){
+                maniacodeStr += "InputPlayer."+key+"="+(parseFloat(params[key]))+";\n"
+            }else{
+                maniacodeStr += "InputPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
+            }
         }
 
         maniascript = maniascript.replace("{{code}}", maniacodeStr)
