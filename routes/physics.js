@@ -69,7 +69,12 @@ module.exports = function (app) {
         for(const key in params){
             var code = "";
             if(realList.includes(key)){
-                maniacodeStr += "InputPlayer."+key+"="+(parseFloat(params[key]))+";\n"
+                if(params[key] == "1"){
+                    params[key] = "1.0"
+                }else if(params[key] == "0"){
+                    params[key] = "0.0001"
+                }
+                maniacodeStr += "InputPlayer."+key+"="+(parseFloat(params[key]).toFixed(4))+";\n"
             }else{
                 maniacodeStr += "InputPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
             }
