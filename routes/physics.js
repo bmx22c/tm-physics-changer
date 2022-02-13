@@ -1,33 +1,17 @@
 const fs = require('fs')
 
-// Real AccelCoef;
-// Real AdherenceCoef;
-// Boolean Boost2Down;
-// Boolean Boost2Up;
-// Boolean BoostDown;
-// Boolean BoostUp;
-// Real ControlCoef;
-// Real Cruise;
-// Boolean ForceEngine;
-// Boolean Fragile;
-// Real GravityCoef;
-// Boolean NoBrakes;
-// Boolean NoEngine;
-// Boolean NoSteer;
-// Boolean SlowMotion;
-
 dict = {
-    'physicReactorBoostUp': 'BoostUp',
-    'physicRedReactorBoostUp': 'Boost2Up',
-    'physicNoSteer': 'NoSteer',
-    'physicNoEngine': 'NoEngine',
-    'physicFullThrottle': 'ForceEngine',
-    'physicReactorBoostDown': 'BoostDown',
-    'physicRedReactorBoostDown': 'Boost2Down',
-    'physicFragile': 'Fragile',
-    'physicNobrake': 'NoBrakes',
-    'physicSlowMo': 'SlowMotion',
-    'physicsCruise': 'Cruise',
+    // 'physicReactorBoostUp': 'BoostUp',
+    // 'physicRedReactorBoostUp': 'Boost2Up',
+    // 'physicNoSteer': 'NoSteer',
+    // 'physicNoEngine': 'NoEngine',
+    // 'physicFullThrottle': 'ForceEngine',
+    // 'physicReactorBoostDown': 'BoostDown',
+    // 'physicRedReactorBoostDown': 'Boost2Down',
+    // 'physicFragile': 'Fragile',
+    // 'physicNobrake': 'NoBrakes',
+    // 'physicSlowMo': 'SlowMotion',
+    // 'physicsCruise': 'Cruise',
     'physicsAcceleration': 'AccelCoef',
     'physicsAdherence': 'AdherenceCoef',
     'physicsControl': 'ControlCoef',
@@ -35,7 +19,7 @@ dict = {
 }
 
 realList = [
-    'Cruise',
+    // 'Cruise',
     'AccelCoef',
     'AdherenceCoef',
     'ControlCoef',
@@ -74,9 +58,9 @@ module.exports = function (app) {
                 }else if(params[key] == "0"){
                     params[key] = "0.0001"
                 }
-                maniacodeStr += "InputPlayer."+key+"="+(parseFloat(params[key]).toFixed(4))+";\n"
+                maniacodeStr += "GUIPlayer."+key+"="+(parseFloat(params[key]).toFixed(4))+";\n"
             }else{
-                maniacodeStr += "InputPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
+                maniacodeStr += "GUIPlayer."+key+"="+(params[key] === 'true' ? "True" : "False")+";\n"
             }
         }
 

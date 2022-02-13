@@ -1,16 +1,12 @@
 <manialink version="3">
-<script>
-<!--
-        #RequireContext CSmMlScriptIngame
-        
-        #Include "MathLib" as ML
-        
-        main() {
-            declare metadata Int3[][Real] GravityTriggers for Playground.Map; 
-            declare Int3 PlayerPosition;
-            {{code}}
+    <script><!--
+    main() {
+        while (True) {
+            yield;
+            if (GUIPlayer != Null && GUIPlayer == InputPlayer) {
+                {{code}}
+            }
         }
-    
--->
-</script>
+    }
+    --></script>
 </manialink>

@@ -23,6 +23,7 @@ app.use(cors());
 require('./routes/home.js')(app)
 require('./routes/physics.js')(app)
 // require('./routes/checkprofile.js')(app)
+app.use('/assets', express.static(process.cwd() + '/assets'))
 
 app.listen(port, () => {
 	console.log(`Application exemple à l'écoute sur le port ${port}!`);
