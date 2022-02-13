@@ -334,6 +334,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
+				<small>Sources: <a style="color:#444" href="https://github.com/bmx22c/tm-physics-changer">https://github.com/bmx22c/tm-physics-changer</a></small>
 			</div>
 		</div>
 	</div>
