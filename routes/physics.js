@@ -51,7 +51,6 @@ module.exports = function (app) {
         var maniacodeStr = ""
 
         for(const key in params){
-            var code = "";
             if(realList.includes(key)){
                 if(params[key] == "1"){
                     params[key] = "1.0"
@@ -65,8 +64,6 @@ module.exports = function (app) {
         }
 
         maniascript = maniascript.replace("{{code}}", maniacodeStr)
-
-        // console.log(maniascript)
 
         res.set('Content-Type', 'text/xml')
         res.send(maniascript)
